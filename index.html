@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vue.js TicTacToe</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+	<div class="center-block">
+		<div id="tictactoe">
+
+			<div class="display">
+				<div id="board">
+					<div class="space" v-for="square in board.spaces" v-text="square.value" @click="occupySquare(square)"></div>
+				</div>
+				<div id="controls">
+					<h3>Choose Symbol</h3>
+					<label class="radio-btn">X
+					  <input type="radio" name="symbol" value="X" v-model="symbol">
+					  <span class="checkmark"></span>
+					</label>
+					<label class="radio-btn">O
+					  <input type="radio" name="symbol" value="O" v-model="symbol">
+					  <span class="checkmark"></span>
+					</label>
+					<button class="start" @click="startGame" v-text="startBtn"></button>
+				</div>
+			</div> <!-- end display -->
+
+			<div class="description">
+				<h1>Tic Tac Toe</h1>
+				<ul class="fa-ul">
+					<li><i class="fa-li fa fa-angle-right"></i>Built with vanilla JavaScript and OOP principles</li>
+					<li><i class="fa-li fa fa-angle-right"></i>The player with the X symbol will always go first</li>
+					<li><i class="fa-li fa fa-angle-right"></i>Check out the git repository <a href="https://github.com/amfische/tictactoe" target="_blank">here</a></li>
+				</ul>
+				<h1>Minimax Algorithm</h1>
+				<ul class="fa-ul">
+					<li><i class="fa-li fa fa-angle-right"></i>The computer's A.I. is designed to be unbeatable; at best a player will tie.</li>
+					<li><i class="fa-li fa fa-angle-right"></i>The A.I. uses the minimax algorithm and is a common tool in zero-sum games like chess and checkers.</li>
+					<li><i class="fa-li fa fa-angle-right"></i>The algorithm is recursive and essentially works by playing out all possible scenarios given the current state of the board.</li>
+					<li><i class="fa-li fa fa-angle-right"></i>Surprisingly, there are around 32,000 possible game states in Tic Tac Toe. Chess has around 10<sup>50</sup> possible states.</li>
+					<li><i class="fa-li fa fa-angle-right"></i>Click <a href="http://neverstopbuilding.com/minimax" target="_blank">here</a> to learn more.</li>
+				</ul>
+			</div> <!-- end description -->
+
+		</div> <!-- end #tictactoe -->
+	</div> <!-- end container -->
+
+	<script src="https://use.fontawesome.com/d3c9e0b791.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script type="text/javascript" src="js/board.js"></script>
+	<script type="text/javascript" src="js/boardspace.js"></script>
+	<script type="text/javascript" src="js/players.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
